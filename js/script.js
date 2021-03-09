@@ -1,54 +1,25 @@
-const category1 = document.getElementById("btnCatCoding");
-const category2 = document.getElementById("btnCatSpace");
 const category = document.getElementsByClassName("cat");
-//let codingSelected, spaceSelected;
-
-category1.addEventListener("click", (e) => {
-  e.preventDefault();
-  //codingSelected = true;
-  selectedCategory();
-});
-
-category2.addEventListener("click", (e) => {
-  e.preventDefault();
-  //spaceSelected = true;
-  selectedCategory();
-});
-
 const userName = document.getElementById("name");
 const startButton = document.getElementById("btnComenzar");
+let selectedCategory;
 
 startButton.addEventListener("click", (e) => {
   e.preventDefault();
   let name = userName.value;
-  let checker1 = category1.classList.contains("selected-Cat");
-  let checker2 = category2.classList.contains("selected-Cat");
-  userInputsValidator(name, checker1, checker2);
+  userInputsValidator(name, isSelected());
 });
 
-function selectedCategory() {
-  if (
-    category1.classList.contains("selected-Cat") ||
-    category2.classList.contains("selected-Cat")
-  ) {
-    category1.classList.remove("selected-Cat");
-    category2.classList.remove("selected-Cat");
-    //codingSelected = false;
-    //spaceSelected = false;
+function isSelected() {
+  rating = document.forms["cato"]["cat"].value;
+  if (rating > 0) {
+    return true;
   } else {
-    if (!category1.classList.contains("selected-Cat")) {
-      category1.classList.add("selected-Cat");
-      //spaceSelected = false;
-    } else if (!category2.classList.contains("selected-Cat")) {
-      category2.classList.add("selected-Cat");
-      //codingSelected = false;
-    }
+    return false;
   }
 }
 
-//!str.trim().length
-function userInputsValidator(str, check1, check2) {
-  if ((!str.trim().length || !check1) && (!str.trim().length || !check2)) {
+function userInputsValidator(str, fun) {
+  if (!str.trim().length || !fun) {
     alert("Please fill the input and select a category!");
   } else {
     userRegistration();
@@ -58,6 +29,8 @@ function userInputsValidator(str, check1, check2) {
 const registrationDiv = document.getElementById("registrationDiv");
 const rulesDiv = document.getElementById("rulesDiv");
 const body = document.getElementById("bg-body");
+const test = document.getElementsByClassName("content");
+const h1 = document.getElementsByClassName("name");
 
 //this will be excecuted after the user enter his name and chooses a category.
 function userRegistration() {

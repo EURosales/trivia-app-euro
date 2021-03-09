@@ -27,3 +27,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.content {
+  background: white;
+  width: 100%;
+  padding: 300px;
+}
+
+.name {
+  color: rgb(0, 0, 0);
+}

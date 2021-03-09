@@ -6,10 +6,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ask2Me</title>
+
         <link rel="stylesheet" href="../css/generalStyle.css">
         <link rel="stylesheet" href="../css/indexStyle.css">
         <link rel="stylesheet" href="../css/codingCatStyle.css">
         <link rel="stylesheet" href="../css/spaceCatStyle.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     </head>
 
     <body id="bg-body" class="body-index">
@@ -20,28 +23,39 @@
         <div id="mainRegistrationDiv" class="container">
             <div class="userRegister round" id="registrationDiv">
                 <div class="titleContainer">
-                    <h1 class="title">Bienvenido a<span class="brand-name"> Ask2Me! </span></h1>
+                    <h1 class="title"></i>Bienvenido a<span class="brand-name">
+                            Ask2Me! </span></h1>
                 </div>
-                <form class="userRegisterForm round" id="" action="">
+                <form class="userRegisterForm round" name="cato" action="">
                     <div class="nameInput">
                         <label for="name">Ingresa tu nombre:</label>
                         <input type="text" class="input round" id="name" required>
                     </div>
+
                     <div class="categoriesContainer">
                         <label for="">Selecciona una categoria para las preguntas:</label>
+
                         <div class="categories">
-                            <div value="code" class="cat round" id="btnCatCoding">
+                            <div class="cat round">
                                 <img class="img-cat" src="../media/img/coding.png" alt="Coding">
-                                <h4 class="cat-name">Programación</h4>
+                                <label for="content-input">
+                                    <input class="in" type="radio" id="space" name="cat" value="1">Coding
+                                    <i></i>
+                                </label>
                             </div>
-                            <div value="space" class="cat round" id="btnCatSpace">
+
+                            <div class="cat round">
                                 <img class="img-cat" src="../media/img/space.png" alt="Space">
-                                <h4 class="cat-name">Espacio</h4>
+                                <label for="content-input">
+                                    <input class="in" type="radio" id="space" name="cat" value="2">Espacio
+                                    <i></i>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="btnContainer" id="btnComenzar">
-                        <button type="submit" class="btn round"> Comenzar! </button>
+
+                    <div class="btnContainer">
+                        <button type="submit" id="btnComenzar" class="btn round"> Comenzar! </button>
                     </div>
                 </form>
             </div>
@@ -55,8 +69,10 @@
                     Si se acaba el tiempo la respuesta se marcará como incorrecta.</p>
             </div>
         </div>
-        <script src="../js/loader.js"></script>
+
         <script src="../js/script.js"></script>
+        <script src="../js/loader.js"></script>
+        <script src="../js/test.js"></script>
     </body>
 
 </html>
