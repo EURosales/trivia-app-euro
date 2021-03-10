@@ -1,39 +1,4 @@
-.body-coding1Cat {
-  background: #bbd3e9 url("../media/bg/codeC/coding-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.body-coding2Cat {
-  background: #bbd3e9 url("../media/bg/index-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.body-coding3Cat {
-  background: #bbd3e9 url("../media/bg/index-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.body-coding4Cat {
-  background: #bbd3e9 url("../media/bg/index-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.body-coding5Cat {
-  background: #bbd3e9 url("../media/bg/index-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.content {
-  background: white;
-  width: 100%;
-  padding: 300px;
-}
-
-.name {
-  color: rgb(0, 0, 0);
+.body-coding {
+  background-color: #000f14;
+  background-image: url("../media/bg/diag-arrows.png");
 }

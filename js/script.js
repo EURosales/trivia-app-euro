@@ -1,7 +1,5 @@
-const category = document.getElementsByClassName("cat");
 const userName = document.getElementById("name");
 const startButton = document.getElementById("btnComenzar");
-let selectedCategory;
 
 startButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -12,17 +10,18 @@ startButton.addEventListener("click", (e) => {
 function isSelected() {
   rating = document.forms["cato"]["cat"].value;
   if (rating > 0) {
-    return true;
+    //console.log(rating);
+    return true, rating;
   } else {
     return false;
   }
 }
 
-function userInputsValidator(str, fun) {
-  if (!str.trim().length || !fun) {
+function userInputsValidator(str, isSelected) {
+  if (!str.trim().length || !isSelected) {
     alert("Please fill the input and select a category!");
   } else {
-    userRegistration();
+    start();
   }
 }
 
@@ -32,10 +31,29 @@ const body = document.getElementById("bg-body");
 const test = document.getElementsByClassName("content");
 const h1 = document.getElementsByClassName("name");
 
-//this will be excecuted after the user enter his name and chooses a category.
-function userRegistration() {
+function start() {
   registrationDiv.classList.add("hide");
   rulesDiv.classList.add("hide");
   body.classList.remove("body-index");
-  body.classList.add("body-coding1Cat");
+  categoryLoader(isSelected());
+}
+
+function categoryLoader(categoryValue) {
+  if (categoryValue == 1) {
+    //la categoria 1 es PROGRAMACION
+    console.log("Salio 1 - programación");
+    startCoding();
+  } else if (categoryValue == 2) {
+    //la categoria 2 es ESPACIO
+    console.log("Salio 2 - espacio");
+    startSpace();
+  }
+}
+
+function startCoding() {
+  body.classList.add("body-coding");
+}
+
+function startSpace() {
+  body.classList.add("body-space");
 }

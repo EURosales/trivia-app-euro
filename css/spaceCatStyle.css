@@ -1,5 +1,4 @@
-.body-spaceCat {
-  background: #bbd3e9 url("../media/bg/index-bg1-w.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.body-space {
+  background-color: #000f14;
+  background-image: url("../media/bg/triangle.png");
 }
