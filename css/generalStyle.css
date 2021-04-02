@@ -14,16 +14,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 97vh;
+    height: 100vh;
+    margin-top: -20px;
 }
 
 .qa-container {
+    text-align: justify;
+    font-size: 20px;
     width: 80%;
-    background: white;
     margin: 10 auto;
     padding: 3rem;
     border-radius: 8px;
-    text-align: justify;
 }
 
 .hide {
