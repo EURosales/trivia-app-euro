@@ -29,29 +29,31 @@
                 </div>
                 <form class="userRegisterForm round" name="cato" action="">
                     <div class="nameInput">
-                        <label for="name">Ingresa tu nombre:</label>
+                        <label class="label-title" for="name">Ingresa tu nombre:</label>
                         <input type="text" class="input round" id="name" required>
                     </div>
 
                     <div class="categoriesContainer">
-                        <label for="">Selecciona una categoria para las preguntas:</label>
+                        <label class="label-title" for="">Selecciona una categoria para las preguntas:</label>
 
                         <div class="categories">
+
                             <div class="cat round">
                                 <img class="img-cat" src="../media/img/coding.png" alt="Coding">
-                                <label for="content-input">
-                                    <input class="in" type="radio" id="space" name="cat" value="1">Coding
-                                    <i></i>
+                                <label class="input-container" for=""> Coding
+                                    <input type="radio" name="radio" value="1">
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
 
                             <div class="cat round">
                                 <img class="img-cat" src="../media/img/space.png" alt="Space">
-                                <label for="content-input">
-                                    <input class="in" type="radio" id="space" name="cat" value="2">Espacio
-                                    <i></i>
+                                <label class="input-container" for=""> Space
+                                    <input type="radio" name="radio" value="2">
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
+
                         </div>
                     </div>
 
@@ -70,16 +72,24 @@
                     Si se acaba el tiempo la respuesta se marcará como incorrecta.</p>
             </div>
         </div>
-        <div id="co-question-container" class="question-container">
+        <div class="general-container">
+            <!--Coding category-->
+            <div id="coding-question-container" class="qa-container hide">
+            </div>
+            <!--Space category-->
+            <div id="space-question-container" class="qa-container">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta suscipit sit incidunt, officia, rerum
+                    repellat accusamus maxime, in velit voluptatibus iste explicabo reiciendis ipsam laborum similique
+                    unde officiis ab earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                    consectetur laudantium, sunt totam corporis saepe veritatis asperiores ut at nam cum nisi,
+                    temporibus dicta accusantium aspernatur, quasi atque facilis! Ad!</p>
+            </div>
         </div>
-        <!--Coding category-->
-        <div class="coding-cat-container">
-            
-        </div>
-        <!--Space category-->
+
+        <script src="../js/questions.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/loader.js"></script>
-        <script src="../js/test.js"></script>
+
     </body>
 
 </html>
