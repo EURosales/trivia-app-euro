@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../css/indexStyle.css">
         <link rel="stylesheet" href="../css/codingCatStyle.css">
         <link rel="stylesheet" href="../css/spaceCatStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     </head>
@@ -58,7 +59,7 @@
                     </div>
 
                     <div class="btnContainer">
-                        <button type="submit" id="btnComenzar" class="btn round"> Comenzar! </button>
+                        <button type="submit" id="btnComenzar" class="index-btn round"> Comenzar! </button>
                     </div>
                 </form>
             </div>
@@ -72,17 +73,20 @@
                     Si se acaba el tiempo la respuesta se marcará como incorrecta.</p>
             </div>
         </div>
-        <div class="general-container">
+        <div id="gen-container" class="general-container hide">
             <!--Coding category-->
             <div id="coding-question-container" class="qa-container hide">
             </div>
             <!--Space category-->
-            <div id="space-question-container" class="qa-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta suscipit sit incidunt, officia, rerum
-                    repellat accusamus maxime, in velit voluptatibus iste explicabo reiciendis ipsam laborum similique
-                    unde officiis ab earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-                    consectetur laudantium, sunt totam corporis saepe veritatis asperiores ut at nam cum nisi,
-                    temporibus dicta accusantium aspernatur, quasi atque facilis! Ad!</p>
+            <div id="space-question-container" class="animate__animated animate__backInDown qa-container hide">
+                <h1>Pregunta 1</h1>
+                <div id="question">How many planets are in our solar system, and which one is the last?</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="answer-btn">8 planets, Neptune</button>
+                    <button class="answer-btn">8 planets, Pluto</button>
+                    <button class="answer-btn">4 planets, Earth</button>
+                    <button class="answer-btn">9 planets, Pluto</button>
+                </div>
             </div>
         </div>
 

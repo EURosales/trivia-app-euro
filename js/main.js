@@ -49,10 +49,15 @@ function categoryLoader(categoryValue) {
     }
 }
 
+const genContainer = document.getElementById('gen-container');
+const spaceScreen = document.getElementById('space-question-container');
 function startCoding() {
     body.classList.add('body-coding');
 }
 
 function startSpace() {
+    console.log('The space category function was reached.');
     body.classList.add('body-space');
+    genContainer.classList.remove('hide');
+    spaceScreen.classList.remove('hide');
 }

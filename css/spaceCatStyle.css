@@ -4,7 +4,37 @@
 }
 
 #space-question-container {
+    background: #0f2027; /* fallback for old browsers */
+    background-image: url('https://www.transparenttextures.com/patterns/dotnoise-light-grey.png');
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+#space-question-container h1 {
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 1rem 0;
     color: white;
+}
+
+#question {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.answer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 2em 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    border: 1px solid white;
     background: #0f2027; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to right,
@@ -18,4 +48,23 @@
         #203a43,
         #0f2027
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: #000000; /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(
+        to right,
+        #f7797d,
+        #fbd786,
+        #c6ffdd */
+    /*); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(
+        to right,
+        #f7797d,
+        #fbd786,
+        #c6ffdd
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1.5rem;
 }
