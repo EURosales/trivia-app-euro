@@ -79,13 +79,22 @@
             </div>
             <!--Space category-->
             <div id="space-question-container" class="animate__animated animate__backInDown qa-container hide">
-                <h1>Pregunta 1</h1>
+                <div class="indicators">
+                    <h2>Question 1 out of 6</h2>
+                    <div class="numeric-ind">
+                        <h3 id="timer"></h3>
+                        <h3 id="score">Score: 20</h3>
+                    </div>
+                </div>
                 <div id="question">How many planets are in our solar system, and which one is the last?</div>
                 <div id="answer-buttons" class="btn-grid">
-                    <button class="answer-btn">8 planets, Neptune</button>
+                    <!-- <button class="answer-btn">8 planets, Neptune</button>
                     <button class="answer-btn">8 planets, Pluto</button>
                     <button class="answer-btn">4 planets, Earth</button>
-                    <button class="answer-btn">9 planets, Pluto</button>
+                    <button class="answer-btn">9 planets, Pluto</button> -->
+                </div>
+                <div id="controller" class="controller hide">
+                    <button class="answer-btn">Next</button>
                 </div>
             </div>
         </div>
