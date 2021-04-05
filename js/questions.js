@@ -54,3 +54,27 @@ const spaceQuestions = [
         ],
     },
 ];
+
+
+// function timer() {
+//     let startingMinuts;
+//     let time = startingMinuts * 60;
+
+//     let counterId = setInterval(() => {
+//         updateCountdown();
+//     }, 1000);
+
+//     function updateCountdown() {
+//         const minutes = Math.floor(time / 60);
+//         let seconds = time % 60;
+
+//         seconds = seconds < 10 ? '0' + seconds : seconds;
+//         counter.innerHTML = `Time: ${minutes}:${seconds}`;
+//         time--;
+
+//         if (time < 0) {
+//             clearInterval(counterId);
+//             //return 0;
+//         }
+//     }
+// }

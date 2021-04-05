@@ -7,8 +7,9 @@ let name;
 const counter = document.getElementById('timer');
 
 function timer() {
-    const startingMinuts = 0.1;
+    let startingMinuts = 1;
     let time = startingMinuts * 60;
+
     let counterId = setInterval(() => {
         updateCountdown();
     }, 1000);
@@ -23,7 +24,6 @@ function timer() {
 
         if (time < 0) {
             clearInterval(counterId);
-            //return 0;
         }
     }
 }
@@ -81,14 +81,10 @@ const genContainer = document.getElementById('gen-container');
 const spaceScreen = document.getElementById('space-question-container');
 const controller = document.getElementById('controller');
 
-/*
-anwserBTN.forEach(mish);
-function mish(element) {
-    element.addEventListener('click', (e) => {
-        controller.classList.remove('hide');
-    });
-}
-*/
+controller.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextSpaceQuestion();
+});
 
 function startCoding() {
     body.classList.add('body-coding');
@@ -111,6 +107,7 @@ function startSpace() {
 }
 
 function setNextSpaceQuestion() {
+    resetState();
     timer();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
@@ -134,4 +131,41 @@ function showQuestion(question) {
     });
 }
 
-function selectAnswer(e) {}
+function resetState() {
+    controller.classList.add('hide');
+    while (anwserButtons.firstChild) {
+        anwserButtons.removeChild(anwserButtons.firstChild);
+    }
+}
+
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    setStatusClass(document.body, correct);
+    Array.from(anwserButtons.children).forEach((button) => {
+        setStatusClass(button, button.dataset.correct);
+    });
+    //controller.classList.remove('hide');
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        controller.classList.remove('hide');
+    } else {
+        //AQUI IRA UNA NUEVO FUNCION INVENTADA POR MI
+        //PARA REINICIAR EL JUEGO
+        startButton.innerText = 'Restart';
+        startButton.classList.remove('hide');
+    }
+}
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('correct-answer');
+    } else {
+        element.classList.add('wrong-answer');
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct-answer');
+    element.classList.remove('wrong-answer');
+}

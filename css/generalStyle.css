@@ -50,6 +50,14 @@
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.correct-answer {
+    background: green !important;
+}
+
+.wrong-answer {
+    background: red !important;
+}
+
 .hide {
     display: none;
 }
