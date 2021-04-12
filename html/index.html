@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="../css/indexStyle.css">
         <link rel="stylesheet" href="../css/codingCatStyle.css">
         <link rel="stylesheet" href="../css/spaceCatStyle.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
     </head>
 
     <body id="bg-body" class="body-index ">
@@ -78,13 +78,16 @@
             <div id="coding-question-container" class="qa-container hide">
             </div>
             <!--Space category-->
-            <div id="space-question-container" class="animate__animated animate__backInDown qa-container hide">
-                <div class="indicators">
-                    <h2>Question 1 out of 6</h2>
-                    <div class="numeric-ind">
+            <div id="space-question-container" class="qa-container hide">
+                <div id="indicators" class="indicators">
+                    <h2 id="place-indicator"></h2>
+                    <div id="numeric-ind" class="numeric-ind">
                         <h3 id="timer"></h3>
                         <h3 id="score"></h3>
                     </div>
+                </div>
+                <div id="resultsDiv">
+                    <p id="results"></p>
                 </div>
                 <div id="question">How many planets are in our solar system, and which one is the last?</div>
                 <div id="answer-buttons" class="btn-grid">

@@ -2,6 +2,7 @@ const userName = document.getElementById('name');
 const startButton = document.getElementById('btnComenzar');
 const questionElement = document.getElementById('question');
 const anwserButtons = document.getElementById('answer-buttons');
+const num_ind = document.getElementById('numeric-ind');
 let name;
 let score = 0;
 
@@ -82,6 +83,8 @@ const genContainer = document.getElementById('gen-container');
 const spaceScreen = document.getElementById('space-question-container');
 const controller = document.getElementById('controller');
 const scoreCounter = document.getElementById('score');
+const indicators = document.getElementById('indicators');
+const place = document.getElementById('place-indicator');
 
 controller.addEventListener('click', () => {
     currentQuestionIndex++;
@@ -127,11 +130,12 @@ function setNextSpaceQuestion() {
 }
 
 function showQuestion(question) {
+    scoreCounter.innerHTML = `Score: ${score}`;
+    place.innerHTML = `Question ${currentQuestionIndex + 1} out of ${spaceQuestions.length}`;
     /*Al h1 que contiene la pregunta, se le asigna la pregunta que este en la
     posicion 0 despues de reordenar el arreglo que ccontiene las preguntas*/
     //el primer "question es el parametro de la función en la que estamos actualmente."
     //El segundo "question" es el nombre de la "Key" del diccionario que contiene la pregunta.
-    scoreCounter.innerHTML = `Score: ${score}`;
     questionElement.innerText = question.question;
     //Answers
     question.answers.forEach((answer) => {
@@ -160,8 +164,9 @@ function selectAnswer(e) {
     } else {
         //AQUI IRA UNA NUEVO FUNCION INVENTADA POR MI
         //PARA REINICIAR EL JUEGO
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
+        // startButton.innerText = 'Restart';
+        // startButton.classList.remove('hide');
+        gameOver();
     }
 }
 
@@ -191,4 +196,26 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct-answer');
     element.classList.remove('wrong-answer');
+}
+
+const resultsDiv = document.getElementById('resultsDiv');
+const results = document.getElementById('results');
+
+function triviaResults() {
+    place.innerText = 'Game Over';
+    `Score: ${score}`;
+    results.innerHTML = `Hello ${name}! your score was ${score}!`;
+}
+
+function gameOver() {
+    resetState();
+    triviaResults();
+    resultsDiv.classList.remove('hide');
+    questionElement.classList.add('hide');
+    anwserButtons.classList.add('hide');
+    num_ind.classList.add('hide');
+    scoreCounter.classList.add('hide');
+    counter.classList.add('hide');
+
+    //body.style.backgroundColor = 'yellow';
 }
