@@ -3,13 +3,14 @@ const startButton = document.getElementById('btnComenzar');
 const questionElement = document.getElementById('question');
 const anwserButtons = document.getElementById('answer-buttons');
 let name;
+let score = 0;
 
+/*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
+let startingMinuts = 1;
+let time = startingMinuts * 60;
 
 function timer() {
-    let startingMinuts = 1;
-    let time = startingMinuts * 60;
-
     let counterId = setInterval(() => {
         updateCountdown();
     }, 1000);
@@ -80,6 +81,7 @@ function categoryLoader(categoryValue) {
 const genContainer = document.getElementById('gen-container');
 const spaceScreen = document.getElementById('space-question-container');
 const controller = document.getElementById('controller');
+const scoreCounter = document.getElementById('score');
 
 controller.addEventListener('click', () => {
     currentQuestionIndex++;
@@ -102,14 +104,26 @@ function startSpace() {
     //Aqui se estable que comience por la posicion 0 del array que contiene las preguntas
     currentQuestionIndex = 0;
     //Una vez el orden de las preguntas esta sorteado, se comienzan a cargar en el div.
-    console.log(name);
     setNextSpaceQuestion();
+    //A la vez que inicia el div, se comienza a contar el tiempo.
+    timer();
 }
 
 function setNextSpaceQuestion() {
+    //Siempre antes de cargar la siguiente pregunta y respuestas, se limpian todas las alertas visuales que hayan surgido debido al reesultado de la respuesta anterior.
     resetState();
-    timer();
+    //Se accesa a la siguiente pregunta con sus respuestas.
     showQuestion(shuffledQuestions[currentQuestionIndex]);
+
+    // if (timer > 0) {
+    //     //Se accesa a la siguiente pregunta con sus respuestas.
+    //     showQuestion(shuffledQuestions[currentQuestionIndex]);
+    // } // else {
+    //     //si el tiempo se acabo, lo proximo que se hará al darle clic al boton es mostrar el puntaje final.
+    //     //gameOver();
+    // }
+    //Se accesa a la siguiente pregunta con sus respuestas.
+    //showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
@@ -117,6 +131,7 @@ function showQuestion(question) {
     posicion 0 despues de reordenar el arreglo que ccontiene las preguntas*/
     //el primer "question es el parametro de la función en la que estamos actualmente."
     //El segundo "question" es el nombre de la "Key" del diccionario que contiene la pregunta.
+    scoreCounter.innerHTML = `Score: ${score}`;
     questionElement.innerText = question.question;
     //Answers
     question.answers.forEach((answer) => {
@@ -131,17 +146,11 @@ function showQuestion(question) {
     });
 }
 
-function resetState() {
-    controller.classList.add('hide');
-    while (anwserButtons.firstChild) {
-        anwserButtons.removeChild(anwserButtons.firstChild);
-    }
-}
-
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
+    scoreCalc(correct);
+    setStatusClass(spaceScreen, correct);
     Array.from(anwserButtons.children).forEach((button) => {
         setStatusClass(button, button.dataset.correct);
     });
@@ -153,6 +162,20 @@ function selectAnswer(e) {
         //PARA REINICIAR EL JUEGO
         startButton.innerText = 'Restart';
         startButton.classList.remove('hide');
+    }
+}
+
+function scoreCalc(correct) {
+    if (correct) {
+        score += 20;
+    }
+}
+
+function resetState() {
+    controller.classList.add('hide');
+    clearStatusClass(spaceScreen);
+    while (anwserButtons.firstChild) {
+        anwserButtons.removeChild(anwserButtons.firstChild);
     }
 }
 

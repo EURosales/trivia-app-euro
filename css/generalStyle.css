@@ -37,25 +37,39 @@
 }
 
 .controller .answer-btn {
-    background: #11998e; /* fallback for old browsers */
+    background: #0c6e66; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to right,
-        #38ef7d,
-        #11998e
+        #1d9946,
+        #0c6e66
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
         to right,
-        #38ef7d,
-        #11998e
+        #1d9946,
+        #0c6e66
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .correct-answer {
+    /* background: green !important; */
+    border: 3px solid rgb(0, 255, 0) !important;
+    transition: 0.3s;
+    -webkit-box-shadow: 0px 0px 34px 1px rgba(0, 255, 0, 0.43);
+    -moz-box-shadow: 0px 0px 34px 1px rgba(0, 255, 0, 0.43);
+    box-shadow: 0px 0px 34px 1px rgba(0, 255, 0, 0.43);
+}
+
+#answer-buttons .correct-answer {
     background: green !important;
 }
 
 .wrong-answer {
-    background: red !important;
+    /*background: red !important;*/
+    border: 3px solid rgb(255, 0, 0) !important;
+    transition: 0.3s;
+    -webkit-box-shadow: 0px 0px 34px 1px rgba(255, 0, 0, 0.43);
+    -moz-box-shadow: 0px 0px 34px 1px rgba(255, 0, 0, 0.43);
+    box-shadow: 0px 0px 34px 1px rgba(255, 0, 0, 0.43);
 }
 
 .hide {
