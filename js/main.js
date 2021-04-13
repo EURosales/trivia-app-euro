@@ -26,6 +26,8 @@ function timer() {
 
         if (time < 0) {
             clearInterval(counterId);
+            gameOver();
+            alert(`Time's over!`);
         }
     }
 }
@@ -117,16 +119,6 @@ function setNextSpaceQuestion() {
     resetState();
     //Se accesa a la siguiente pregunta con sus respuestas.
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-
-    // if (timer > 0) {
-    //     //Se accesa a la siguiente pregunta con sus respuestas.
-    //     showQuestion(shuffledQuestions[currentQuestionIndex]);
-    // } // else {
-    //     //si el tiempo se acabo, lo proximo que se hará al darle clic al boton es mostrar el puntaje final.
-    //     //gameOver();
-    // }
-    //Se accesa a la siguiente pregunta con sus respuestas.
-    //showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
@@ -186,6 +178,7 @@ function resetState() {
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
+    element.disabled = true;
     if (correct) {
         element.classList.add('correct-answer');
     } else {
@@ -196,6 +189,7 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct-answer');
     element.classList.remove('wrong-answer');
+    element.disabled = false;
 }
 
 const resultsDiv = document.getElementById('resultsDiv');
@@ -208,14 +202,12 @@ function triviaResults() {
 }
 
 function gameOver() {
-    resetState();
-    triviaResults();
     resultsDiv.classList.remove('hide');
     questionElement.classList.add('hide');
     anwserButtons.classList.add('hide');
     num_ind.classList.add('hide');
     scoreCounter.classList.add('hide');
     counter.classList.add('hide');
-
-    //body.style.backgroundColor = 'yellow';
+    resetState();
+    triviaResults();
 }
