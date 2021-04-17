@@ -57,22 +57,6 @@ function userInputsValidator(str, isSelected) {
     }
 }
 
-//Load questions from the category selected
-const mainRegistrationDiv = document.getElementById('mainRegistrationDiv');
-const registrationDiv = document.getElementById('registrationDiv');
-const body = document.getElementById('bg-body');
-const test = document.getElementsByClassName('content');
-const h1 = document.getElementsByClassName('name');
-let shuffledQuestions, currentQuestionIndex;
-
-function start() {
-    mainRegistrationDiv.classList.add('hide');
-    registrationDiv.classList.add('hide');
-    rulesDiv.classList.add('hide');
-    body.classList.remove('body-index');
-    categoryLoader(isSelected());
-}
-
 function categoryLoader(categoryValue) {
     if (categoryValue == 1) {
         startCoding();
@@ -81,8 +65,28 @@ function categoryLoader(categoryValue) {
     }
 }
 
+//Load questions from the category selected
+const mainRegistrationDiv = document.getElementById('mainRegistrationDiv');
+const registrationDiv = document.getElementById('registrationDiv');
 const genContainer = document.getElementById('gen-container');
+const body = document.getElementById('bg-body');
+const test = document.getElementsByClassName('content');
+const h1 = document.getElementsByClassName('name');
 const spaceScreen = document.getElementById('space-question-container');
+let shuffledQuestions, currentQuestionIndex;
+
+function start() {
+    mainRegistrationDiv.classList.add('hide');
+    registrationDiv.classList.add('hide');
+    rulesDiv.classList.add('hide');
+    body.classList.remove('body-index');
+    //Se ocultan los primeros DIV's, lo que contienen la parte de registro.
+    genContainer.classList.remove('hide');
+    //SpaceScreen tiene que ser cambiado por un nombre que represente las dos categorias
+    spaceScreen.classList.remove('hide');
+    categoryLoader(isSelected());
+}
+
 const controller = document.getElementById('controller');
 const scoreCounter = document.getElementById('score');
 const indicators = document.getElementById('indicators');
@@ -90,31 +94,40 @@ const place = document.getElementById('place-indicator');
 
 controller.addEventListener('click', () => {
     currentQuestionIndex++;
-    setNextSpaceQuestion();
+    setNextQuestion();
 });
 
 function startCoding() {
+    //console.log('The space category function was reached.');
+    //Se cambia la imagen de fondo
     body.classList.add('body-coding');
+
+    //Reordena las preguntas en diferente orden
+    shuffledQuestions = codingQuestions.sort(() => Math.random() - 0.5);
+    //Aqui se estable que comience por la posicion 0 del array que contiene las preguntas
+    currentQuestionIndex = 0;
+    //Una vez el orden de las preguntas esta sorteado, se comienzan a cargar en el div.
+    setNextQuestion();
+    //A la vez que inicia el div, se comienza a contar el tiempo.
+    timer();
 }
 
 function startSpace() {
     //console.log('The space category function was reached.');
     //Se cambia la imagen de fondo
     body.classList.add('body-space');
-    //Se ocultan los primeros DIV's, lo que contienen la parte de registro.
-    genContainer.classList.remove('hide');
-    spaceScreen.classList.remove('hide');
+
     //Reordena las preguntas en diferente orden
     shuffledQuestions = spaceQuestions.sort(() => Math.random() - 0.5);
     //Aqui se estable que comience por la posicion 0 del array que contiene las preguntas
     currentQuestionIndex = 0;
     //Una vez el orden de las preguntas esta sorteado, se comienzan a cargar en el div.
-    setNextSpaceQuestion();
+    setNextQuestion();
     //A la vez que inicia el div, se comienza a contar el tiempo.
     timer();
 }
 
-function setNextSpaceQuestion() {
+function setNextQuestion() {
     //Siempre antes de cargar la siguiente pregunta y respuestas, se limpian todas las alertas visuales que hayan surgido debido al reesultado de la respuesta anterior.
     resetState();
     //Se accesa a la siguiente pregunta con sus respuestas.
@@ -123,7 +136,7 @@ function setNextSpaceQuestion() {
 
 function showQuestion(question) {
     scoreCounter.innerHTML = `Score: ${score}`;
-    place.innerHTML = `Question ${currentQuestionIndex + 1} out of ${spaceQuestions.length}`;
+    place.innerHTML = `Question ${currentQuestionIndex + 1} out of ${shuffledQuestions.length}`;
     /*Al h1 que contiene la pregunta, se le asigna la pregunta que este en la
     posicion 0 despues de reordenar el arreglo que ccontiene las preguntas*/
     //el primer "question es el parametro de la función en la que estamos actualmente."

@@ -55,6 +55,44 @@ const spaceQuestions = [
     },
 ];
 
+const codingQuestions = [
+    {
+        question: 'Coding question 1',
+        answers: [
+            { text: 'Answer 1', correct: false },
+            { text: 'Answer 2', correct: true },
+            { text: 'Answer 3', correct: false },
+            { text: 'Answer 4', correct: false },
+        ],
+    },
+    {
+        question: 'Coding question 2',
+        answers: [
+            { text: 'Answer 1', correct: false },
+            { text: 'Answer 2', correct: true },
+            { text: 'Answer 3', correct: false },
+            { text: 'Answer 4', correct: false },
+        ],
+    },
+    {
+        question: 'Coding question 3',
+        answers: [
+            { text: 'Answer 1', correct: false },
+            { text: 'Answer 2', correct: true },
+            { text: 'Answer 3', correct: false },
+            { text: 'Answer 4', correct: false },
+        ],
+    },
+    {
+        question: 'Coding question 4',
+        answers: [
+            { text: 'Answer 1', correct: false },
+            { text: 'Answer 2', correct: true },
+            { text: 'Answer 3', correct: false },
+            { text: 'Answer 4', correct: false },
+        ],
+    },
+];
 
 // function timer() {
 //     let startingMinuts;
