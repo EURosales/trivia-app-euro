@@ -1,4 +1,15 @@
 .body-coding {
-  background-color: #000f14;
-  background-image: url("../media/bg/diag-arrows.png");
+    background-color: #000c14;
+    background-image: url('../media/bg/batthern.png');
+}
+
+.body-coding #question-container {
+    background-color: #020021;
+    background-image: url('../media/bg/graphy-dark.png');
+}
+
+.body-coding .answer-btn {
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
 }

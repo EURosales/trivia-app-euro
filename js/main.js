@@ -8,11 +8,12 @@ let score = 0;
 
 /*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
-let startingMinuts = 1;
+let startingMinuts = 3;
 let time = startingMinuts * 60;
+let counterId;
 
 function timer() {
-    let counterId = setInterval(() => {
+    counterId = setInterval(() => {
         updateCountdown();
     }, 1000);
 
@@ -26,8 +27,8 @@ function timer() {
 
         if (time < 0) {
             clearInterval(counterId);
-            gameOver();
             alert(`Time's over!`);
+            gameOver();
         }
     }
 }
@@ -72,7 +73,7 @@ const genContainer = document.getElementById('gen-container');
 const body = document.getElementById('bg-body');
 const test = document.getElementsByClassName('content');
 const h1 = document.getElementsByClassName('name');
-const spaceScreen = document.getElementById('space-question-container');
+const questionScreen = document.getElementById('question-container');
 let shuffledQuestions, currentQuestionIndex;
 
 function start() {
@@ -83,7 +84,7 @@ function start() {
     //Se ocultan los primeros DIV's, lo que contienen la parte de registro.
     genContainer.classList.remove('hide');
     //SpaceScreen tiene que ser cambiado por un nombre que represente las dos categorias
-    spaceScreen.classList.remove('hide');
+    questionScreen.classList.remove('hide');
     categoryLoader(isSelected());
 }
 
@@ -119,6 +120,7 @@ function startSpace() {
 
     //Reordena las preguntas en diferente orden
     shuffledQuestions = spaceQuestions.sort(() => Math.random() - 0.5);
+
     //Aqui se estable que comience por la posicion 0 del array que contiene las preguntas
     currentQuestionIndex = 0;
     //Una vez el orden de las preguntas esta sorteado, se comienzan a cargar en el div.
@@ -159,7 +161,7 @@ function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
     scoreCalc(correct);
-    setStatusClass(spaceScreen, correct);
+    setStatusClass(questionScreen, correct);
     Array.from(anwserButtons.children).forEach((button) => {
         setStatusClass(button, button.dataset.correct);
     });
@@ -167,23 +169,25 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         controller.classList.remove('hide');
     } else {
-        //AQUI IRA UNA NUEVO FUNCION INVENTADA POR MI
-        //PARA REINICIAR EL JUEGO
-        // startButton.innerText = 'Restart';
-        // startButton.classList.remove('hide');
         gameOver();
+        clearInterval(counterId);
     }
 }
 
 function scoreCalc(correct) {
     if (correct) {
         score += 20;
+    } else {
+        score -= 5;
+        if (score < 0) {
+            score = 0;
+        }
     }
 }
 
 function resetState() {
     controller.classList.add('hide');
-    clearStatusClass(spaceScreen);
+    clearStatusClass(questionScreen);
     while (anwserButtons.firstChild) {
         anwserButtons.removeChild(anwserButtons.firstChild);
     }

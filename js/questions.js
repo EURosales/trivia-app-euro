@@ -57,39 +57,57 @@ const spaceQuestions = [
 
 const codingQuestions = [
     {
-        question: 'Coding question 1',
+        question: 'Which was the first name of JavaScript?',
         answers: [
-            { text: 'Answer 1', correct: false },
-            { text: 'Answer 2', correct: true },
-            { text: 'Answer 3', correct: false },
-            { text: 'Answer 4', correct: false },
+            { text: 'MS-DOS', correct: false },
+            { text: 'Mocha', correct: true },
+            { text: 'Linux', correct: false },
+            { text: 'Java', correct: false },
         ],
     },
     {
-        question: 'Coding question 2',
+        question: 'Who developed the first web browser? (even though if it was not popular)',
         answers: [
-            { text: 'Answer 1', correct: false },
-            { text: 'Answer 2', correct: true },
-            { text: 'Answer 3', correct: false },
-            { text: 'Answer 4', correct: false },
+            { text: 'Bill Gates', correct: false },
+            { text: 'Elon Musk', correct: false },
+            { text: 'Tim Cook', correct: false },
+            { text: 'Tim Berners-Lee', correct: true },
         ],
     },
     {
-        question: 'Coding question 3',
+        question: 'In which year JSON was created?',
         answers: [
-            { text: 'Answer 1', correct: false },
-            { text: 'Answer 2', correct: true },
-            { text: 'Answer 3', correct: false },
-            { text: 'Answer 4', correct: false },
+            { text: '1995', correct: false },
+            { text: '2001', correct: false },
+            { text: '2003', correct: true },
+            { text: '2015', correct: false },
         ],
     },
     {
-        question: 'Coding question 4',
+        question: 'In which year jquery made it is first appearance?',
         answers: [
-            { text: 'Answer 1', correct: false },
-            { text: 'Answer 2', correct: true },
-            { text: 'Answer 3', correct: false },
-            { text: 'Answer 4', correct: false },
+            { text: '2006', correct: true },
+            { text: '2000', correct: false },
+            { text: '2010', correct: false },
+            { text: '2020', correct: false },
+        ],
+    },
+    {
+        question: 'In which year NodeJS was introduced and by who?',
+        answers: [
+            { text: 'in may 2009, by Ryan Dahl', correct: true },
+            { text: 'in may 2010, by Rayn Dehl', correct: false },
+            { text: 'in may 2000, by Steve Wozniak', correct: false },
+            { text: 'in may 2001, by Jeff Bezos', correct: false },
+        ],
+    },
+    {
+        question: 'What "DOM" means?',
+        answers: [
+            { text: 'Dedicated Object Matrix', correct: false },
+            { text: 'Dynamic Object Modal', correct: false },
+            { text: 'Document Object Model', correct: true },
+            { text: 'Design Oriented to Molds', correct: false },
         ],
     },
 ];
