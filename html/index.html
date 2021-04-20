@@ -5,22 +5,20 @@
         <link rel="shortcut icon" href="../media/icons/idea.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ask2Me</title>
-
         <link rel="stylesheet" href="../css/generalStyle.css">
         <link rel="stylesheet" href="../css/indexStyle.css">
         <link rel="stylesheet" href="../css/codingCatStyle.css">
         <link rel="stylesheet" href="../css/spaceCatStyle.css">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
+        <title>Ask2Me</title>
     </head>
 
     <body id="bg-body" class="body-index ">
+        <!--Loader-->
         <div id="loader" class="loader">
             <img src="../media/img/loader.gif" alt="Loading...">
             <h3 class="br0_5-up">Wait a sec...</h3>
         </div>
+
         <!--Hiden after a category is selected-->
         <div id="mainRegistrationDiv" class="container">
             <div class="userRegister round" id="registrationDiv">
@@ -73,8 +71,11 @@
                     Si se acaba el tiempo la respuesta se marcará como incorrecta.</p>
             </div>
         </div>
+
+        <!--Question Container-->
         <div id="gen-container" class="general-container hide">
             <div id="question-container" class="qa-container hide">
+                <!--Indicators-->
                 <div id="indicators" class="indicators">
                     <h2 id="place-indicator"></h2>
                     <div id="numeric-ind" class="numeric-ind">
@@ -82,13 +83,15 @@
                         <h3 id="score"></h3>
                     </div>
                 </div>
+                <!--Results when game over-->
                 <div id="resultsDiv">
                     <p id="results"></p>
                 </div>
+                <!--Here's where the question loads-->
                 <div id="question"></div>
-                <div id="answer-buttons" class="btn-grid">
-
-                </div>
+                <!--Here's where the answers load-->
+                <div id="answer-buttons" class="btn-grid"></div>
+                <!--This is the next button-->
                 <div id="controller" class="controller hide">
                     <button class="answer-btn">Next</button>
                 </div>

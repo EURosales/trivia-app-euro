@@ -8,7 +8,7 @@ let score = 0;
 
 /*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
-let startingMinuts = 3;
+let startingMinuts = 60;
 let time = startingMinuts * 60;
 let counterId;
 
