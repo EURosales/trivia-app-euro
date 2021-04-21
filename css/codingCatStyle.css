@@ -67,3 +67,15 @@
 .body-coding .modal-btn-close:hover {
     filter: brightness(1.2);
 }
+
+.body-coding .btn-playAgain{
+    padding: 3rem 2.5rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+}

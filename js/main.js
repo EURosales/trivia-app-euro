@@ -10,8 +10,8 @@ let score = 0;
 
 /*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
-let startingMinuts = 20;
-let time = startingMinuts * 0.5;
+let startingMinuts = 0.75;
+let time = startingMinuts * 60;
 let counterId;
 
 function timer() {
@@ -216,14 +216,24 @@ function clearStatusClass(element) {
     element.disabled = false;
 }
 
-const resultsDiv = document.getElementById('resultsDiv');
+const resultsDiv = document.querySelector('#resultsDiv');
 const results = document.getElementById('results');
+const playAgain = document.querySelector('.btn-playAgain');
 
 function triviaResults() {
     place.innerText = 'Game Over';
-    `Score: ${score}`;
-    results.innerHTML = `Hello ${name}! your score was ${score}!`;
+    if (score < 50) {
+        results.innerHTML = `Hello ${name}, your score was ${score} points! <br> Maybe could have been worse...`;
+    } else if (score > 50 && score < 90) {
+        results.innerHTML = `Hello ${name}, your score was ${score} points! <br> Good Job!`;
+    } else {
+        results.innerHTML = `Hello ${name}, your score was ${score} points! <br> Calm down, NERD!`;
+    }
 }
+
+playAgain.addEventListener('click', () => {
+    location.reload();
+});
 
 function gameOver() {
     modal.classList.add('hide');

@@ -68,8 +68,8 @@
                     ingresar tu nombre para comezar.</p>
                 <p class="rules-text">2.Cada categoria contiene 6 preguntas, depende la cantidad que respondas
                     correctamente para obtener un puntaje.</p>
-                <p class="rules-text">3.Cada pregunta consta de 4 respuestas y dispones de 30 segundos para responder.
-                    Si se acaba el tiempo la respuesta se marcará como incorrecta.</p>
+                <p class="rules-text">3.Cada pregunta consta de 4 respuestas y dispones de 45 segundos para responder.
+                </p>
             </div>
         </div>
 
@@ -84,10 +84,7 @@
                         <h3 id="score"></h3>
                     </div>
                 </div>
-                <!--Results when game over-->
-                <div id="resultsDiv">
-                    <p id="results"></p>
-                </div>
+
                 <!--Here's where the question loads-->
                 <div id="question"></div>
                 <!--Here's where the answers load-->
@@ -95,6 +92,11 @@
                 <!--This is the next button-->
                 <div id="controller" class="controller hide">
                     <button class="answer-btn">Next</button>
+                </div>
+                <!--Results when game over-->
+                <div id="resultsDiv" class="hide">
+                    <p id="results"></p>
+                    <a class="btn-playAgain">Play again <i class="fas fa-undo-alt"></i></a>
                 </div>
             </div>
         </div>
