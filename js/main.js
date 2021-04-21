@@ -3,13 +3,15 @@ const startButton = document.getElementById('btnComenzar');
 const questionElement = document.getElementById('question');
 const anwserButtons = document.getElementById('answer-buttons');
 const num_ind = document.getElementById('numeric-ind');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal-btn-close');
 let name;
 let score = 0;
 
 /*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
-let startingMinuts = 0.75;
-let time = startingMinuts * 60;
+let startingMinuts = 20;
+let time = startingMinuts * 0.5;
 let counterId;
 
 function timer() {
@@ -27,8 +29,11 @@ function timer() {
 
         if (time < 0) {
             clearInterval(counterId);
-            alert(`Time's over!`);
-            gameOver();
+            modal.classList.remove('hide');
+            questionScreen.classList.add('disabled');
+            closeModal.addEventListener('click', () => {
+                gameOver();
+            });
         }
     }
 }
@@ -172,7 +177,7 @@ function selectAnswer(e) {
         clearInterval(counterId);
         setTimeout(function () {
             gameOver();
-        }, 4000);
+        }, 2500);
     }
 }
 
@@ -221,12 +226,14 @@ function triviaResults() {
 }
 
 function gameOver() {
+    modal.classList.add('hide');
     resultsDiv.classList.remove('hide');
     questionElement.classList.add('hide');
     anwserButtons.classList.add('hide');
     num_ind.classList.add('hide');
     scoreCounter.classList.add('hide');
     counter.classList.add('hide');
+    questionScreen.classList.remove('disabled');
     resetState();
     triviaResults();
 }

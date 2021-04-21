@@ -9,15 +9,61 @@
 }
 
 .body-space .answer-btn {
-    background: #4b6cb7; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #182848,
-        #4b6cb7
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #182848,
-        #4b6cb7
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+}
+
+.body-space .modal {
+    font-family: 'Quicksand', sans-serif;
+    background: white;
+    border-radius: 8px;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-space .modal-header {
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+}
+
+.body-space .modal-content {
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.body-space .modal-content img {
+    width: 30%;
+    margin: 1.5rem auto;
+}
+
+.body-space .modal-footer {
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem;
+    background: #ebebeb;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.body-space .modal-btn-close {
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+}
+
+.body-space .modal-btn-close:hover {
+    filter: brightness(1.2);
 }

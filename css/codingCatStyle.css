@@ -13,3 +13,57 @@
     background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
     background: linear-gradient(to right, #49a09d, #5f2c82);
 }
+
+.body-coding .modal {
+    font-family: 'Quicksand', sans-serif;
+    background: white;
+    border-radius: 8px;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-coding .modal-header {
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+}
+
+.body-coding .modal-content {
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.body-coding .modal-content img {
+    width: 30%;
+    margin: 1.5rem auto;
+}
+
+.body-coding .modal-footer {
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem;
+    background: #ebebeb;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.body-coding .modal-btn-close {
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+}
+
+.body-coding .modal-btn-close:hover {
+    filter: brightness(1.2);
+}
