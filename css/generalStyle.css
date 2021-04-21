@@ -14,8 +14,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: -20px;
+    margin: auto;
+    /* height: auto;
+    margin-top: -20px; */
 }
 
 .qa-container {

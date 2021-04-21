@@ -8,7 +8,7 @@ let score = 0;
 
 /*Timer function - condition it's added later*/
 const counter = document.getElementById('timer');
-let startingMinuts = 60;
+let startingMinuts = 0.75;
 let time = startingMinuts * 60;
 let counterId;
 
@@ -169,8 +169,10 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         controller.classList.remove('hide');
     } else {
-        gameOver();
         clearInterval(counterId);
+        setTimeout(function () {
+            gameOver();
+        }, 4000);
     }
 }
 
