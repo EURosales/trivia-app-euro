@@ -110,8 +110,8 @@
 }
 
 .btn-playAgain {
-    margin: 2.5rem;
-    padding: 3rem 2.5rem;
+    margin: 1rem;
+    padding: 1rem 1rem;
 }
 
 .btn-playAgain:hover {
@@ -281,7 +281,7 @@
 
 @media (max-width: 1345px) {
     .qa-container {
-        width: 75%;
+        width: 78%;
     }
 }
 
@@ -292,6 +292,9 @@
     }
     .modal {
         width: 60% !important;
+    }
+    #resultsDiv {
+        flex-direction: column;
     }
 }
 
@@ -347,6 +350,7 @@
 @media (max-width: 325px) {
     .general-container {
         height: auto;
+        padding-top: 1rem !important;
     }
     .indicators h2 {
         font-size: 1.2rem;
