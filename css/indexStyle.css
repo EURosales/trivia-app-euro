@@ -98,8 +98,7 @@
     transition: 0.15s;
 }
 
-/*Desde aqui para los inputs*/
-
+/*inputs*/
 .input-container {
     color: white;
     display: block;
@@ -166,7 +165,7 @@
     background: white;
 }
 
-/*Hasta aqui*/
+/*end inputs*/
 
 .selected-Cat {
     filter: brightness(1.3) !important;

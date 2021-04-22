@@ -85,17 +85,9 @@
 }
 
 .controller .answer-btn {
-    background: #dce35b !important; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #45b649,
-        #dce35b
-    ) !important; /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #45b649,
-        #dce35b
-    ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #dce35b !important;
+    background: -webkit-linear-gradient(to right, #45b649, #dce35b) !important;
+    background: linear-gradient(to right, #45b649, #dce35b) !important;
 }
 
 #results {
@@ -133,17 +125,9 @@
 }
 
 #answer-buttons .correct-answer {
-    background: #56ab2f; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #a8e063,
-        #56ab2f
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #a8e063,
-        #56ab2f
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #56ab2f;
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+    background: linear-gradient(to right, #a8e063, #56ab2f);
 }
 
 .wrong-answer {
@@ -155,17 +139,9 @@
 }
 
 #answer-buttons .wrong-answer {
-    background: #cb2d3e; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #ef473a,
-        #cb2d3e
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #ef473a,
-        #cb2d3e
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #cb2d3e;
+    background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);
+    background: linear-gradient(to right, #ef473a, #cb2d3e);
 }
 
 .modal {
@@ -348,6 +324,9 @@
 }
 
 @media (max-width: 325px) {
+    .qa-container {
+        margin-top: 1rem !important;
+    }
     .general-container {
         height: auto;
         padding-top: 1rem !important;
